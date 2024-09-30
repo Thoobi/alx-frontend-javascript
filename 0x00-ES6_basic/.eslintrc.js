@@ -1,4 +1,4 @@
-modulw.exports = {
+module.exports = {
     env: {
         browser: false,
         es6: true,
@@ -6,7 +6,7 @@ modulw.exports = {
     },
     extends: [
         'airbnb-base',
-        'plugin: jest/all',
+        'plugin:jest/all',
     ],
     globals: {
         Atomics: 'readonly',

@@ -8,7 +8,6 @@ export default function handleResponseFromAPI(promise) {
       };
     })
     .catch(() => {
-      // Handle any errors
-      throw new Error('The fake API is not working currently');
+      throw new Error();
     });
 }

@@ -2,10 +2,12 @@ import { uploadPhoto, createUser } from './utils';
 
 export default async function handleProfileSignup() {
   try {
-    const photoResponse = await uploadPhoto('photo-profile-1');
-    const userResponse = await createUser('Guillaume', 'Salva');
+    const [photoResponse, userResponse] = await Promise.all([
+      uploadPhoto(),
+      createUser(),
+    ]);
 
-    console.log(photoResponse.body, userResponse.firstName, userResponse.lastName);
+    console.log(`${photoResponse.body} ${userResponse.firstName} ${userResponse.lastName}`);
   } catch (error) {
     throw Error('Signup system offline');
   }
